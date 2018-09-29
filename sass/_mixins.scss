@@ -1,0 +1,23 @@
+@mixin card {
+    width: 200px;
+    height: 200px;
+    border: solid $color-main 4px;
+    margin: 30px;
+}
+@mixin card-large {
+    width: 500px;
+    height: 500px;
+}
+@mixin background-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin card-text {
+                font-family: $font-montserrat;
+            font-size: $font-size-medium;
+            color: $color-white;
+            text-align: center;
+            letter-spacing: 1.5px;
+}

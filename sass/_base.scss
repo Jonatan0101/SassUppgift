@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+::selection{
+    background-color: $color-light;
+    color: $color-white;
+}
+a{
+    color: $color-dark;
+    text-decoration: none;
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    z-index: 1000;
+    min-height: 60px;
+    line-height: 60px;
+    justify-self: center;
+    background-color: #101113;
+    
+
+    &__links{
+        font-size: $font-size-medium;
+        
+        display: flex;
+        justify-content: center;
+
+   
+        &--link{
+            text-decoration: none;
+            padding: 1rem;
+            color: $color-grey;
+            text-align: center;
+            font-family: $font-montserrat;
+
+            &:hover{
+                transition: all .2s;
+                color: $color-dark;
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.header {
+    height: 100vh;
+    &__img {
+        background-image: url('../img/header-small.jpg');
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media screen and (min-width: 400px){
+            background-image: url('../img/header-large.jpg');
+        }
+    }
+}
+
+.section1 {
+    background-image: linear-gradient($color-black, $color-white);
+
+    &__title {
+        &--text{
+            & h2{
+                color: $color-white;
+                font-size: $font-size-large;
+                text-align: center;
+                &:before{
+                    content: "";
+                    display: block;
+                    margin: 0 auto;
+                    height: 10px;
+                    background-color: $color-grey;
+                    width: 100px;
+                }
+            }
+            
+        }
+    }
+
+    &__text {
+        width: 50%;
+        margin: 0 auto;
+        padding: 30px;
+        font-family: $font-montserrat;
+
+        @media screen and (max-width: 600px){
+            width: 90%;
+        }
+        &--text {
+            text-align: justify;
+            & h3{
+                font-size: $font-size-medium;
+                text-align: center;
+            }
+        }
+    }
+    & .card-container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    & .card{
+        @include card;
+
+        @media screen and (min-width: 600px){
+            @include card-large;
+        }
+        &:hover {
+            transition-duration: .5s;
+            opacity: 0.75;
+        }
+    }
+
+    & #left-wing {
+        background-image: url('../img/wing.jpg');
+        
+        @include background-img;
+
+        & p {
+            @include card-text;
+            margin-top: 10px;
+        }
+    }
+
+    & #right-wing {
+        background-image: url('../img/wing2.jpg');
+
+        @include background-img;
+
+        & p {
+            @include card-text;
+            color: $color-black;
+        }
+    }
+
+}
+
+.section2 {
+    background-color: $color-white;
+    &__title {
+        &--text{
+            & h2 {
+
+                color: $color-black;
+                font-size: $font-size-large;
+                text-align: center;
+                &:before{
+                    content: "";
+                    display: block;
+                    margin: 0 auto;
+                    height: 10px;
+                    background-color: $color-black;
+                    width: 90% ;
+                }
+            }
+        }
+    }
+}

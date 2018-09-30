@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-
+    
 }
 
 html{
@@ -18,8 +18,8 @@ a{
     text-decoration: none;
 }
 
-h1, h2 {
-    font-family: 'Montserrat', sans-serif;
+h1, h2, h3, p, label {
+    font-family: $font-montserrat;
 }
 
 .navbar {
@@ -40,7 +40,7 @@ h1, h2 {
    
         &--link{
             text-decoration: none;
-            padding: 1rem;
+            padding: .5rem;
             color: $color-grey;
             text-align: center;
             font-family: $font-montserrat;
@@ -63,7 +63,7 @@ h1, h2 {
         background-repeat: no-repeat;
         background-size: cover;
 
-        @media screen and (min-width: 400px){
+        @media screen and (min-width: 550px){
             background-image: url('../img/header-large.jpg');
         }
     }
@@ -94,7 +94,7 @@ h1, h2 {
     &__text {
         width: 50%;
         margin: 0 auto;
-        padding: 30px;
+        padding-bottom: 30px;
         font-family: $font-montserrat;
 
         @media screen and (max-width: 600px){
@@ -167,6 +167,52 @@ h1, h2 {
                     width: 90% ;
                 }
             }
+            & p {
+                font-family: $font-montserrat;
+                font-size: $font-size-small;
+                width: 50%;
+                margin: 0 auto;
+                padding-bottom: 30px;
+                text-align: justify;
+                @media screen and (max-width: 600px){
+                    width: 90%;
+                }
+            }
+        }
+    }
+    &__form {
+        width: 50%;
+        margin: 0 auto;
+        @media screen and (max-width: 500px){
+            width: 90%;
+        }
+        &--content {
+            display: flex;  
+            flex-flow: column;
+
+            & > * {
+                margin: 5px;
+                padding: 5px;
+            }
+            & input {
+                border: solid 2px $color-main; 
+                transition-duration: .2s;
+                &:focus {
+                    
+                    border: solid 2px $color-main;
+                    background-color: $color-white;
+                }
+            }
+            & #submit-btn {
+                cursor: pointer;
+                width: 50%;
+                margin: 0 auto;
+                
+                &:hover {
+                    transform: scale(1.3);
+                }
+            }
+
         }
     }
 }

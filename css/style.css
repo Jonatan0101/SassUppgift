@@ -18,8 +18,8 @@ a {
   color: #0b4f6c;
   text-decoration: none; }
 
-h1, h2 {
-  font-family: 'Montserrat', sans-serif; }
+h1, h2, h3, p, label {
+  font-family: "Montserrat", sans-serif; }
 
 .navbar {
   width: 100%;
@@ -34,7 +34,7 @@ h1, h2 {
     justify-content: center; }
     .navbar__links--link {
       text-decoration: none;
-      padding: 1rem;
+      padding: .5rem;
       color: #757575;
       text-align: center;
       font-family: "Montserrat", sans-serif; }
@@ -51,7 +51,7 @@ h1, h2 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 550px) {
       .header__img {
         background-image: url("../img/header-large.jpg"); } }
 
@@ -71,7 +71,7 @@ h1, h2 {
   .section1__text {
     width: 50%;
     margin: 0 auto;
-    padding: 30px;
+    padding-bottom: 30px;
     font-family: "Montserrat", sans-serif; }
     @media screen and (max-width: 600px) {
       .section1__text {
@@ -135,3 +135,37 @@ h1, h2 {
       height: 10px;
       background-color: #101113;
       width: 90%; }
+  .section2__title--text p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    text-align: justify; }
+    @media screen and (max-width: 600px) {
+      .section2__title--text p {
+        width: 90%; } }
+  .section2__form {
+    width: 50%;
+    margin: 0 auto; }
+    @media screen and (max-width: 500px) {
+      .section2__form {
+        width: 90%; } }
+    .section2__form--content {
+      display: flex;
+      flex-flow: column; }
+      .section2__form--content > * {
+        margin: 5px;
+        padding: 5px; }
+      .section2__form--content input {
+        border: solid 2px #208ba8;
+        transition-duration: .2s; }
+        .section2__form--content input:focus {
+          border: solid 2px #208ba8;
+          background-color: silver; }
+      .section2__form--content #submit-btn {
+        cursor: pointer;
+        width: 50%;
+        margin: 0 auto; }
+        .section2__form--content #submit-btn:hover {
+          transform: scale(1.3); }

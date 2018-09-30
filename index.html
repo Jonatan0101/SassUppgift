@@ -11,9 +11,9 @@
     <nav class="navbar">
         
         <div class="navbar__links">
-            <a href="#stuff" class="navbar__links--link">About</a>
             <a href="#products" class="navbar__links--link">Products</a>
-            <a href="" class="navbar__links--link">Buy</a>
+            <a href="#buy" class="navbar__links--link">Buy</a>
+            <a href="#footer" class="navbar__links--link">About</a>
         </div>
     </nav>
 
@@ -60,16 +60,36 @@
             
     </section>
     <section>
-        <div class="section2">
+        <div class="section2" id="buy">
             <div class="section2__title">
                 <div class="section2__title--text">
                     <h2>
                         Buy
                     </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et neque laudantium tenetur vero molestiae labore magni optio aliquid temporibus quis, in corrupti minus vel dolorem, totam earum asperiores exercitationem? Tempore.</p>
                 </div>
                 
             </div>
+            <div class="section2__form">
+                <div class="section2__form--content">
+                    <input type="text" id="form-name" placeholder="Name">
+                    <input type="email" id="form-email" placeholder="E-mail">
+                    <input type="tel" id="form-tel" placeholder="Phone number">
+
+                    <div class="checkbox">
+                        <label for="">I accept</label>
+                        <input type="checkbox" id="form-checkbox">
+                    </div>
+                    <input type="button" value="Click to enter buy screen" id="submit-btn">
+                </div>
+            </div>
         </div>
     </section>
+    <footer>
+        <div class="footer">
+            
+        </div>
+    </footer>
+    <script src="./javascript/app.js"></script>
 </body>
 </html>

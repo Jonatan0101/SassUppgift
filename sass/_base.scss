@@ -10,7 +10,7 @@ html{
 
 }
 ::selection{
-    background-color: $color-light;
+    background-color: $color-black;
     color: $color-white;
 }
 li{
@@ -222,10 +222,45 @@ h1, h2, h3, p, label, a {
     }
 }
 
+#buy-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    background-color: #29292985;
+
+    
+    
+    .buy {
+        width: 100%;
+        height: 70%;
+        background-color: $color-white;
+        padding: 30px;
+        &__title {
+            &--text {
+                & h2 {
+                    text-align: center;
+                    padding: 10px;
+                    font-size: $font-size-large;
+                }
+            }
+        }
+        &__select {
+            &--cards {
+                
+            }
+        }
+
+        }
+    
+}
 
 
 footer {
-    background-color: $color-dark;
+    background-image: linear-gradient($color-white, $color-main, $color-dark);
     padding: 40px 0;
     .footer {
         width: 90%;
@@ -245,6 +280,27 @@ footer {
             width: 100%;
             }
         }
+
+        &__top {
+            flex: 1  1 100%;
+
+            & h2 {
+                color: $color-dark;
+                text-align: center;
+                font-size: $font-size-large;
+            }
+            &--images {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: center;
+                & img {
+                    width: 200px;
+                    height: 100%;
+                    margin: 10px;
+                }
+            }
+        }
         &__left {
             color: $color-white;
         }
@@ -252,9 +308,17 @@ footer {
             text-align: right;
             color: $color-white;
 
-            & a {
-                
-            }
+         
         }
     }
+}
+
+
+
+
+
+// Hjälpklasser
+
+.hidden {
+    display: none;
 }

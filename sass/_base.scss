@@ -1,31 +1,39 @@
+// Tar bort margin och padding från allt, plus sätter en 
+// transition duration för att det ska se fint ut när man resizar fönstret
 * {
     margin: 0;
     padding: 0;
     transition-duration: .2s;
 }
 
+// Sätter border-box och smooth scroll för att det ska bli fint när man trycker på en länk som scrollar ner
 html{
     box-sizing: border-box;
     scroll-behavior: smooth;
 
 }
+
+// Gör så att markering av text ör svart
 ::selection{
     background-color: $color-black;
     color: $color-white;
 }
+// Tar bort skit från list
 li{
     list-style: none;
 }
+
+// Gör alla länkar lite finare
 a{
     color: $color-white;
     text-decoration: none;
 }
-
+// Sätter font på allt om man glömmer senare
 h1, h2, h3, p, label, a {
     font-family: $font-montserrat;
 }
 
-.navbar {
+.navbar { 
     width: 100%;
     z-index: 1000;
     min-height: 60px;
@@ -58,7 +66,7 @@ h1, h2, h3, p, label, a {
 }
 
 .header {
-    height: 100vh;
+    height: 100vh; //Använder vh för att ta upp hela framsidan
     &__img {
         background-image: url('../img/header-small.jpg');
         height: 100vh;
@@ -66,14 +74,14 @@ h1, h2, h3, p, label, a {
         background-repeat: no-repeat;
         background-size: cover;
 
-        @media screen and (min-width: 550px){
+        @media screen and (min-width: 550px){ // Sätter en annan bild om skärmen är stor
             background-image: url('../img/header-large.jpg');
         }
     }
 }
 
 .section1 {
-    background-image: linear-gradient($color-black, $color-white);
+    background-image: linear-gradient($color-black, $color-white); // Mjuk övergång från mörkt till ljust
 
     &__title {
         &--text{
@@ -81,7 +89,7 @@ h1, h2, h3, p, label, a {
                 color: $color-white;
                 font-size: $font-size-large;
                 text-align: center;
-                &:before{
+                &:before{ // Sätter en linje övanför med :before
                     content: "";
                     display: block;
                     margin: 0 auto;
@@ -100,7 +108,7 @@ h1, h2, h3, p, label, a {
         padding-bottom: 30px;
         font-family: $font-montserrat;
 
-        @media screen and (max-width: 600px){
+        @media screen and (max-width: 600px){ // Texten tar upp typ hela skärmen på telefon
             width: 90%;
         }
         &--text {
@@ -117,22 +125,18 @@ h1, h2, h3, p, label, a {
         flex-flow: row wrap;
         justify-content: center;
     }
-    & .card{
+    & .card{ //Mixins används för att göra responsiva cards
         @include card;
 
         @media screen and (min-width: 600px){
             @include card-large;
-        }
-        &:hover {
-            transition-duration: .5s;
-            opacity: 0.75;
         }
     }
 
     & #left-wing {
         background-image: url('../img/wing.jpg');
         
-        @include background-img;
+        @include background-img; //Mixin för att göra bilden fin på nästa card också
 
         & p {
             @include card-text;
@@ -231,14 +235,17 @@ h1, h2, h3, p, label, a {
     height: 100%;
     width: 100%;
     background-color: #29292985;
-
+    
     
     
     .buy {
         width: 100%;
-        height: 70%;
+        height: 60%;
         background-color: $color-white;
         padding: 30px;
+        
+        animation: 1s animateDown;
+
         &__title {
             &--text {
                 & h2 {
@@ -250,7 +257,8 @@ h1, h2, h3, p, label, a {
         }
         &__select {
             &--cards {
-                
+                display: flex;
+
             }
         }
 
@@ -272,7 +280,7 @@ footer {
         @media screen and (max-width: 800px){
             flex-flow: column;
         }
-        & > div{
+        & > div{ // Väljer alla divs och 
             width: 30%;
             margin-bottom: 30px;
             line-height: 1.7;
@@ -287,7 +295,7 @@ footer {
             & h2 {
                 color: $color-dark;
                 text-align: center;
-                font-size: $font-size-large;
+                font-size: $font-size-medium;
             }
             &--images {
                 display: flex;
@@ -317,8 +325,23 @@ footer {
 
 
 
-// Hjälpklasser
+// Hjälpklasser för att göra saker smidigare kanske
 
 .hidden {
     display: none;
+}
+
+.font-size-medium {
+    font-family: $font-size-medium;
+}
+
+// Animationer
+
+@keyframes animateDown {
+    0% {
+        transform: translateY(-100%)
+    }
+    100% {
+        transform: translateY(0);
+    }
 }

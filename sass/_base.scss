@@ -29,7 +29,7 @@ a{
     text-decoration: none;
 }
 // Sätter font på allt om man glömmer senare
-h1, h2, h3, p, label, a {
+h1, h2, h3, p, label, a, button {
     font-family: $font-montserrat;
 }
 
@@ -192,7 +192,7 @@ h1, h2, h3, p, label, a {
         width: 50%;
         margin: 0 auto;
         padding-bottom: 30px;
-        @media screen and (max-width: 500px){
+        @media screen and (max-width: 700px){
             width: 90%;
         }
         &--content {
@@ -231,7 +231,7 @@ h1, h2, h3, p, label, a {
     top: 0;
     left: 0;
     z-index: 1000;
-    overflow: auto;
+    overflow-y: auto;
     height: 100%;
     width: 100%;
     background-color: #29292985;
@@ -242,10 +242,13 @@ h1, h2, h3, p, label, a {
         width: 100%;
         height: 60%;
         background-color: $color-white;
-        padding: 30px;
+        
         
         animation: 1s animateDown;
 
+        @media screen and (max-width: 1000px){
+            height: auto;
+        }
         &__title {
             &--text {
                 & h2 {
@@ -254,11 +257,50 @@ h1, h2, h3, p, label, a {
                     font-size: $font-size-large;
                 }
             }
+            & #close-modal {
+                width: 36px;
+                height: 36px;
+                cursor: pointer;
+                position: relative;
+                top: 10px;
+                left: 90%;
+            }
         }
         &__select {
             &--cards {
                 display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
 
+
+                & .buy-card {
+                padding: 20px;
+                margin: 30px;
+                color: $color-white;
+                @include buyCard;
+                @include boxShadow;
+
+                @media screen and (max-width: 400px){
+                    @include buyCard-small;
+                    margin: 30px 0;
+                }
+                    &--select {
+                        margin: 20px;
+                        
+                    }
+                }
+            }
+            & .buy-button {
+                text-align: center;
+                & button {
+                    padding: 10px 20px;
+                    border: solid 2px $color-main; 
+                    cursor: pointer;
+                    text-align: center; 
+                        &:hover {
+                            box-shadow: 5px 5px 10px 0px $color-black;
+                }
+                }
             }
         }
 
@@ -280,7 +322,7 @@ footer {
         @media screen and (max-width: 800px){
             flex-flow: column;
         }
-        & > div{ // Väljer alla divs och 
+        & > div{ // Väljer alla divs
             width: 30%;
             margin-bottom: 30px;
             line-height: 1.7;
@@ -332,7 +374,7 @@ footer {
 }
 
 .font-size-medium {
-    font-family: $font-size-medium;
+    font-size: $font-size-medium;
 }
 
 // Animationer

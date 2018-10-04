@@ -33,6 +33,7 @@ h1, h2, h3, p, label, a, button {
     font-family: $font-montserrat;
 }
 
+// Navbar
 .navbar { 
     width: 100%;
     z-index: 1000;
@@ -42,21 +43,21 @@ h1, h2, h3, p, label, a, button {
     background-color: #101113;
     
 
-    &__links{
+    &__links{ // Sätter font size och display flex
         font-size: $font-size-medium;
         
         display: flex;
         justify-content: center;
 
-   
-        &--link{
+
+        &--link{ // Sätter saker i mitten och sätter färg
             text-decoration: none;
             padding: .5rem;
             color: $color-grey;
             text-align: center;
             font-family: $font-montserrat;
 
-            &:hover{
+            &:hover{ // Effekt när musen hovrar över knappen
                 transition: all .2s;
                 color: $color-dark;
                 transform: scale(1.2);
@@ -81,7 +82,7 @@ h1, h2, h3, p, label, a, button {
 }
 
 .section1 {
-    background-image: linear-gradient($color-black, $color-white); // Mjuk övergång från mörkt till ljust
+    background-image: linear-gradient($color-black, $color-white); // Mjuk övergång från mörkt till ljust på hemsidan
 
     &__title {
         &--text{
@@ -102,7 +103,7 @@ h1, h2, h3, p, label, a, button {
         }
     }
 
-    &__text {
+    &__text { // Sätter hur mycket texten kan ta upp
         width: 50%;
         margin: 0 auto;
         padding-bottom: 30px;
@@ -120,7 +121,7 @@ h1, h2, h3, p, label, a, button {
             }
         }
     }
-    & .card-container {
+    & .card-container { // Flex för att placera carden rätt
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -161,7 +162,7 @@ h1, h2, h3, p, label, a, button {
     background-color: $color-white;
     &__title {
         &--text{
-            & h2 {
+            & h2 { 
 
                 color: $color-black;
                 font-size: $font-size-large;
@@ -188,7 +189,7 @@ h1, h2, h3, p, label, a, button {
             }
         }
     }
-    &__form {
+    &__form { // Fixar till ett fint form som är responsivt
         width: 50%;
         margin: 0 auto;
         padding-bottom: 30px;
@@ -199,25 +200,25 @@ h1, h2, h3, p, label, a, button {
             display: flex;  
             flex-flow: column;
 
-            & > * {
+            & > * { // Pekar på allt och sätter en margin och padding
                 margin: 5px;
                 padding: 5px;
             }
-            & input {
+            & input { // Stylar textfälten
                 border: solid 2px $color-main; 
                 transition-duration: .2s;
-                &:focus {
+                &:focus { // Ändrar bakgrund om den är i fokus
                     
                     border: solid 2px $color-main;
                     background-color: $color-white;
                 }
             }
-            & #submit-btn {
+            & #submit-btn { // Gör knappen till en fin knapp
                 cursor: pointer;
                 width: 50%;
                 margin: 0 auto;
                 
-                &:hover {
+                &:hover { // Skuggeffekt vid hover
                     box-shadow: 5px 5px 10px 0px $color-black;
                 }
             }
@@ -226,6 +227,7 @@ h1, h2, h3, p, label, a, button {
     }
 }
 
+// Skapar en sektion som kommer fram när man trycker på beställ.
 #buy-screen {
     position: fixed;
     top: 0;
@@ -238,7 +240,7 @@ h1, h2, h3, p, label, a, button {
     
     
     
-    .buy {
+    .buy { // Tar upp 60% av höjden om skärmen är större än 1000 px och animerar in den
         width: 100%;
         height: 60%;
         background-color: $color-white;
@@ -257,7 +259,7 @@ h1, h2, h3, p, label, a, button {
                     font-size: $font-size-large;
                 }
             }
-            & #close-modal {
+            & #close-modal { // Knappen för att stänga sektionen
                 width: 36px;
                 height: 36px;
                 cursor: pointer;
@@ -267,13 +269,13 @@ h1, h2, h3, p, label, a, button {
             }
         }
         &__select {
-            &--cards {
+            &--cards { // Container för cardsen
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: center;
 
 
-                & .buy-card {
+                & .buy-card { // Cardsen får form och skugga från mixins
                 padding: 20px;
                 margin: 30px;
                 color: $color-white;
@@ -290,14 +292,14 @@ h1, h2, h3, p, label, a, button {
                     }
                 }
             }
-            & .buy-button {
+            & .buy-button { // 
                 text-align: center;
                 & button {
                     padding: 10px 20px;
                     border: solid 2px $color-main; 
                     cursor: pointer;
                     text-align: center; 
-                        &:hover {
+                        &:hover { // Effekt vid hover
                             box-shadow: 5px 5px 10px 0px $color-black;
                 }
                 }
@@ -309,10 +311,10 @@ h1, h2, h3, p, label, a, button {
 }
 
 
-footer {
+footer { // Sätter bakgrundsfärg på footern oh en padding
     background-image: linear-gradient($color-white, $color-main, $color-dark);
     padding: 40px 0;
-    .footer {
+    .footer { // Skapar en flexcontainer för bilderna
         width: 90%;
         margin: 0 auto;
         display: flex;
@@ -320,14 +322,14 @@ footer {
         justify-content: center;
 
         @media screen and (max-width: 800px){
-            flex-flow: column;
+            flex-flow: column; // Gör så att bilderna ligger under varandra 
         }
-        & > div{ // Väljer alla divs
+        & > div{ // Väljer alla divs och sätter en bredd
             width: 30%;
             margin-bottom: 30px;
             line-height: 1.7;
             @media screen and (max-width: 800px){
-            width: 100%;
+                width: 100%;
             }
         }
 
@@ -367,7 +369,7 @@ footer {
 
 
 
-// Hjälpklasser för att göra saker smidigare kanske
+// Hjälpklasser för att göra saker smidigare om de eventuellt måste användas flera gånger
 
 .hidden {
     display: none;
@@ -377,7 +379,7 @@ footer {
     font-size: $font-size-medium;
 }
 
-// Animationer
+// Animation för att ta ner köp sektionen
 
 @keyframes animateDown {
     0% {

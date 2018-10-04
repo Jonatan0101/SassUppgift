@@ -4,7 +4,7 @@
     border: solid $color-main 4px;
     margin: 30px;
 }
-@mixin card-large {
+@mixin card-large { // Skapar en mixin som ska användas i en media query
     width: 500px;
     height: 500px;
 }
